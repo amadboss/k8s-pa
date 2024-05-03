@@ -1,2 +1,4 @@
 cert-manager:
   name: cert-manager
+clair:
+  name: clair
