@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.clair.name}}
+  labels:
+    quay-component: clair
+spec:
+  ports:
+    - port: 80
+      name: clair-http
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: {{.Values.clair.name}}
+  type: ClusterIP

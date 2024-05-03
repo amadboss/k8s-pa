@@ -1,0 +1,21 @@
+certificate:
+  name: clair-certificate
+  secretName: clair-tls-secret
+  dnsNames:
+    - clair.pa.mohammad-amad.fr
+middlewares:
+  name: clair-auth 
+  secret: authsecret
+secret:
+  users: passwd
+config:
+  name: clair-config
+  nodeSelector: {}
+clair:
+  name: clair
+postgresql:
+  ip: IP
+  port: PORT
+  db: clair
+  user: clair
+  password: passwd
