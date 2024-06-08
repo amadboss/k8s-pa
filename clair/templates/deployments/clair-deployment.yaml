@@ -14,6 +14,13 @@ spec:
       labels:
         app: {{.Values.clair.name}}
     spec:
+      initContainers:
+      - name: init-permissions
+        image: busybox
+        command: ["sh", "-c", "chmod -R 777 /tmp"]
+        volumeMounts:
+        - name: tmp-data
+          mountPath: /tmp
       containers:
       - name: {{.Values.clair.name}}
         image: quay.io/coreos/clair:v4.3.6
