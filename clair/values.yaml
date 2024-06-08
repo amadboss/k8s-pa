@@ -7,15 +7,15 @@ middlewares:
   name: clair-auth 
   secret: authsecret
 secret:
-  users: passwd
+  users: Y2xhaXI6JGFwcjEkLkZFcmJjbXgkSGt6VE4xQmdnQXJOQ2hneFRqaTJ2MAoK
 config:
   name: clair-config
   nodeSelector: {}
 clair:
   name: clair
 postgresql:
-  ip: IP
-  port: PORT
+  ip: 51.159.24.37
+  port: 22076
   db: clair
   user: clair
-  password: passwd
+  password: gA5CEwaM6FvX9UuWktQx!
