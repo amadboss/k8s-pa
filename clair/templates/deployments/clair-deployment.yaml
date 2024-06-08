@@ -28,11 +28,16 @@ spec:
         volumeMounts:
           - mountPath: /clair/
             name: config
+          - mountPath: /tmp # Chemin dans le conteneur où le volume sera monté
+            name: tmp-data
       restartPolicy: Always
       volumes:
         - name: config
           configMap:
             name: {{.Values.config.name}}
+        - name: tmp-data
+          persistentVolumeClaim:
+            claimName: tmp-data
       nodeSelector:
         {{- toYaml .Values.config.nodeSelector | nindent 8 }}
 
